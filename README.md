@@ -1,50 +1,50 @@
 # Img Gulp
 
-Usando Gulp y Sharp, este proyecto automatiza la optimización de tus imágenes en tres variantes:
+Using Gulp and Sharp, this project automates the optimization of your images into three variants:
 
-- **original** (JPEG/PNG minificado)  
+- **original** (minified JPEG/PNG)  
 - **WebP**  
 - **AVIF**  
 
-De esta forma reduces el peso y mejoras la velocidad de carga en navegadores modernos.
+This reduces file sizes and improves loading speed in modern browsers.
 
 ---
 
-## 📦 Instalación y puesta en marcha
+## 📦 Installation and Setup
 
-1. **Clona el repositorio**  
+1. **Clone the repository**  
    ```bash
    git clone https://github.com/TatanLion/gulp-img.git
    cd gulp-img
    ```
 
-2. **Instala dependencias**  
+2. **Install dependencies**  
    ```bash
    npm install
    ```
 
-3. **Ajusta rutas (si es necesario)**  
-   Por defecto el `gulpfile.js` apunta a:
-   - **Origen:** `./src/img`
-   - **Destino:** `./public/build/img`  
-   Si tu proyecto usa carpetas diferentes, copia el `gulpfile.js` y adapta estas rutas.
+3. **Adjust paths (if needed)**  
+   By default, `gulpfile.js` points to:  
+   - **Source:** `./src/img`  
+   - **Destination:** `./public/build/img`  
+   If your project uses different folders, copy the `gulpfile.js` to your project and update these paths.
 
-4. **Ejecuta tareas**  
-   Las tareas disponibles vienen expuestas en `package.json` como scripts:
+4. **Run tasks**  
+   The available tasks are exposed in `package.json` as scripts:
 
-   | Script           | Descripción                                             |
-   | ---------------- | ------------------------------------------------------- |
-   | `npm run img:min`   | Sólo JPEG/PNG (minificado, calidad 80)               |
-   | `npm run img:webp`  | Sólo generación de `.webp`                          |
-   | `npm run img:avif`  | Sólo generación de `.avif`                          |
-   | `npm run img:all`   | JPEG/PNG + WebP + AVIF                              |
-   | `npm run img:watch` | Ejecuta `img:all` y luego se queda vigilando cambios |
+   | Script           | Description                                                 |
+   | ---------------- | ----------------------------------------------------------- |
+   | `npm run img:min`   | Only minifies JPEG/PNG (quality 80)                        |
+   | `npm run img:webp`  | Only generates `.webp` versions                            |
+   | `npm run img:avif`  | Only generates `.avif` versions                            |
+   | `npm run img:all`   | Generates JPEG/PNG, WebP, and AVIF                        |
+   | `npm run img:watch` | Runs `img:all` and then watches for changes continuously   |
 
-   > **Tip:** Para detener el watcher pulsa `Ctrl + C`.
+   > **Tip:** To stop the watcher, press `Ctrl + C`.
 
 ---
 
-## 🔧 Scripts de `package.json`
+## 🔧 `package.json` Scripts
 
 ```jsonc
 {
@@ -68,19 +68,19 @@ De esta forma reduces el peso y mejoras la velocidad de carga en navegadores mod
 
 ## 📝 Gulpfile.js
 
-Si decides integrarlo en otro proyecto, solo tienes que copiar **todo** el `gulpfile.js` (sin modificar la lógica central) y asegurar las rutas de origen/destino. Los nombres de las tareas (`minifyImages`, `onlyWebp`, `onlyAvif`, `images`, `watchImages`) encajan con los scripts.
+If you decide to integrate this into another project, simply copy **the entire** `gulpfile.js` (without modifying the core logic) and ensure the source/destination paths are correct. The task names (`minifyImages`, `onlyWebp`, `onlyAvif`, `images`, `watchImages`) match the scripts above.
 
 ---
 
-## 📋 Requisitos
+## 📋 Requirements
 
 - Node.js ≥ 14  
-- NPM o Yarn 
-- Un directorio con imágenes dentro de `src/img`
+- NPM or Yarn  
+- A directory with images inside `src/img`
 
 ---
 
-## 🛠️ Construido con
+## 🛠️ Built With
 
 - [Gulp 4](https://gulpjs.com/)  
 - [Sharp](https://sharp.pixelplumbing.com/)  
@@ -88,17 +88,17 @@ Si decides integrarlo en otro proyecto, solo tienes que copiar **todo** el `gulp
 
 ---
 
-## 🤝 Contribuyendo
+## 🤝 Contributing
 
-Lee el [CONTRIBUTING.md](https://github.com/TatanLion/gulp-img/blob/main/README.md) para guías y estilo de código.
+Please read the [CONTRIBUTING.md](https://github.com/TatanLion/gulp-img/blob/main/CONTRIBUTING.md) for guidelines on code standards and pull request procedures.
 
 ---
 
-## ✒️ Autor
+## ✒️ Author
 
-**Jonathan Amaya** – *Ingeniero de Sistemas / Desarrollador Web*  
+**Jonathan Amaya** – *Systems Engineer / Web Developer*  
 GitHub: [TatanLion](https://github.com/TatanLion)
 
 ---
 
-⌨️ con ❤️ por [TatanLion](https://github.com/TatanLion) 😊  
+⌨️ made with ❤️ by [TatanLion](https://github.com/TatanLion) 😊  
