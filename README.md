@@ -1,59 +1,104 @@
 # Img Gulp
 
-Usando herramientas de NPM y Gulp, creamos tareas automatizadas que permiten optimizar imágenes y generar dos versiones adicionales adecuadas para la web: .webp y .avif. Este proceso garantiza una carga más rápida de las imágenes y un rendimiento optimizado en los navegadores modernos.
+Usando Gulp y Sharp, este proyecto automatiza la optimización de tus imágenes en tres variantes:
 
-## Comenzando 🚀
+- **original** (JPEG/PNG minificado)  
+- **WebP**  
+- **AVIF**  
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
-
-Al clonar el repositorio, es necesario instalar las dependencias del proyecto. Para hacerlo, ejecuta:
-
-```
-npm install
-```
-Una vez instaladas, puedes ejecutar las tareas ya configuradas. Importante: Asegúrate de verificar las rutas definidas como origen (src) y destino, para evitar errores.
-
-Después de comprobar que las rutas son correctas, ejecuta la tarea definida en el archivo package.json con el siguiente comando:
-
-```
-npm run img
-```
-Este proceso optimizará y procesará las imágenes automáticamente.
-
-### Pre-requisitos 📋
-
-_Realizar un git clone del proyecto_
-
-_Para HTTPS_
-```
-https://github.com/TatanLion/gulp-img/
-```
-
-### Instalación 🔧
-
-_Se sugiere la instalación de [Git](https://git-scm.com/) y un editor de código de preferencia, en mi caso uso [VsCode](https://code.visualstudio.com/) para poder manipular y observar el proyecto_
-
-## Construido con 🛠️
-
-
-* Gulp
-* NPM
-* JS
-
-## Contribuyendo 🖇️
-
-Por favor lee el [CONTRIBUTING.md](https://github.com/TatanLion/gulp-img/tree/main) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
-
-## Autores ✒️
-
-* **Jonathan Amaya** - *Ing Sistemas - Desarrollador Web* - [TatanLion](https://github.com/TatanLion)
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
+De esta forma reduces el peso y mejoras la velocidad de carga en navegadores modernos.
 
 ---
-⌨️ con ❤️ por [TatanLion](https://github.com/TatanLion) 😊
+
+## 📦 Instalación y puesta en marcha
+
+1. **Clona el repositorio**  
+   ```bash
+   git clone https://github.com/TatanLion/gulp-img.git
+   cd gulp-img
+   ```
+
+2. **Instala dependencias**  
+   ```bash
+   npm install
+   ```
+
+3. **Ajusta rutas (si es necesario)**  
+   Por defecto el `gulpfile.js` apunta a:
+   - **Origen:** `./src/img`
+   - **Destino:** `./public/build/img`  
+   Si tu proyecto usa carpetas diferentes, copia el `gulpfile.js` y adapta estas rutas.
+
+4. **Ejecuta tareas**  
+   Las tareas disponibles vienen expuestas en `package.json` como scripts:
+
+   | Script           | Descripción                                             |
+   | ---------------- | ------------------------------------------------------- |
+   | `npm run img:min`   | Sólo JPEG/PNG (minificado, calidad 80)               |
+   | `npm run img:webp`  | Sólo generación de `.webp`                          |
+   | `npm run img:avif`  | Sólo generación de `.avif`                          |
+   | `npm run img:all`   | JPEG/PNG + WebP + AVIF                              |
+   | `npm run img:watch` | Ejecuta `img:all` y luego se queda vigilando cambios |
+
+   > **Tip:** Para detener el watcher pulsa `Ctrl + C`.
+
+---
+
+## 🔧 Scripts de `package.json`
+
+```jsonc
+{
+  "scripts": {
+    "img:min":   "gulp minifyImages",
+    "img:webp":  "gulp onlyWebp",
+    "img:avif":  "gulp onlyAvif",
+    "img:all":   "gulp images",
+    "img:watch": "gulp watchImages"
+  },
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "sharp": "^0.32.0",
+    "glob": "^8.1.0"
+  }
+}
+```
+
+---
+
+## 📝 Gulpfile.js
+
+Si decides integrarlo en otro proyecto, solo tienes que copiar **todo** el `gulpfile.js` (sin modificar la lógica central) y asegurar las rutas de origen/destino. Los nombres de las tareas (`minifyImages`, `onlyWebp`, `onlyAvif`, `images`, `watchImages`) encajan con los scripts.
+
+---
+
+## 📋 Requisitos
+
+- Node.js ≥ 14  
+- NPM o Yarn 
+- Un directorio con imágenes dentro de `src/img`
+
+---
+
+## 🛠️ Construido con
+
+- [Gulp 4](https://gulpjs.com/)  
+- [Sharp](https://sharp.pixelplumbing.com/)  
+- [Glob](https://www.npmjs.com/package/glob)  
+
+---
+
+## 🤝 Contribuyendo
+
+Lee el [CONTRIBUTING.md](https://github.com/TatanLion/gulp-img/blob/main/README.md) para guías y estilo de código.
+
+---
+
+## ✒️ Autor
+
+**Jonathan Amaya** – *Ingeniero de Sistemas / Desarrollador Web*  
+GitHub: [TatanLion](https://github.com/TatanLion)
+
+---
+
+⌨️ con ❤️ por [TatanLion](https://github.com/TatanLion) 😊  
