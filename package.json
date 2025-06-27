@@ -4,18 +4,15 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "gulp",
-    "img": "gulp"
-  },
-  "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "img:min": "gulp minificarImagenes",
+    "img:webp": "gulp soloWebp",
+    "img:avif": "gulp soloAvif",
+    "img:all": "gulp imagenes",
+    "img:watch": "gulp watchImgs"
   },
   "devDependencies": {
-    "gulp": "^4.0.2",
-    "gulp-cache": "^1.1.3",
-    "gulp-imagemin": "^7.1.0",
-    "gulp-notify": "^3.2.0",
-    "gulp-webp": "^4.0.1"
+    "glob": "^10.3.12",
+    "gulp": "^5.0.0",
+    "sharp": "^0.33.3"
   }
 }
