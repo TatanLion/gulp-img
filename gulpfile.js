@@ -12,7 +12,7 @@ function createImagesTask(formats) {
   return async function processImages(done) {
     const srcDir = "./src/img";
     const buildDir = "./public/build/img";
-    const images = await glob(`${srcDir}/**/*`);
+    const images = await glob(`${srcDir}/**/*.{png,jpg,jpeg,svg}`);
 
     for (const file of images) {
       const relativePath = path.relative(srcDir, path.dirname(file));
