@@ -46,6 +46,13 @@ This reduces file sizes and improves loading speed in modern browsers.
 
 ## 🔧 `package.json` Scripts
 
+Run the following command to install the necessary dependencies for the project:
+
+```
+npm install --save-dev gulp@4.0.2 gulp-cli@2.3.0 sharp@0.32.0 glob@8.1.0
+```
+Or directly add the dependencies to your package.json file as shown in the example below:
+
 ```jsonc
 {
   "scripts": {
