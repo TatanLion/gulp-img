@@ -11,8 +11,9 @@
     "img:watch": "gulp watchImages"
   },
   "devDependencies": {
-    "glob": "^10.3.12",
-    "gulp": "^5.0.0",
-    "sharp": "^0.33.3"
+    "gulp": "^4.0.2",
+    "gulp-cli": "^2.3.0",
+    "sharp": "^0.32.0",
+    "glob": "^8.1.0"
   }
 }
