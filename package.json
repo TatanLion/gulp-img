@@ -4,11 +4,11 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "img:min": "gulp minificarImagenes",
-    "img:webp": "gulp soloWebp",
-    "img:avif": "gulp soloAvif",
-    "img:all": "gulp imagenes",
-    "img:watch": "gulp watchImgs"
+    "img:min": "gulp minifyImages",
+    "img:webp": "gulp onlyWebp",
+    "img:avif": "gulp onlyAvif",
+    "img:all": "gulp images",
+    "img:watch": "gulp watchImages"
   },
   "devDependencies": {
     "glob": "^10.3.12",
